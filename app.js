@@ -1,17 +1,20 @@
 const textInput = document.querySelector ("#text-input");
-const h1Btn = document.querySelector ("#h1-btn");
-const h2Btn = document.querySelector ("#h2-btn");
-const h3Btn = document.querySelector ("#h3-btn");
+const redBtn = document.querySelector ("#red-btn");
+const greenBtn = document.querySelector ("#green-btn");
+const blueBtn = document.querySelector ("#blue-btn");
 const output = document.querySelector ("#output");
 
-h1Btn.addEventListener ("click", () => {
-    output.innerHTML = `<h1>${textInput.value}</h1>`;
+redBtn.addEventListener ("click", () => {
+    output.textContent = textInput.value;
+    output.style.color = "red";
 })
 
-h2Btn.addEventListener ("click", () => {
-    output.innerHTML = `<h2>${textInput.value}</h2>`;
+greenBtn.addEventListener ("click", () => {
+    output.textContent = textInput.value;
+    output.style.color = "green";
 })
 
-h3Btn.addEventListener ("click", () => {
-    output.innerHTML = `<h3>${textInput.value}</h3>`
+blueBtn.addEventListener ("click", () => {
+    output.textContent = textInput.value;
+    output.style.color = "blue"
 })
