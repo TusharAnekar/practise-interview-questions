@@ -1,17 +1,17 @@
-const inputText = document.querySelector ("#input-text");
-const increaseFontSize =  document.querySelector ("#increase-font-size");
-const decreaseFontSize = document.querySelector ("#decrease-font-size");
+const textInput = document.querySelector ("#text-input");
+const h1Btn = document.querySelector ("#h1-btn");
+const h2Btn = document.querySelector ("#h2-btn");
+const h3Btn = document.querySelector ("#h3-btn");
+const output = document.querySelector ("#output");
 
-increaseFontSize.addEventListener ("click", ()=> {
-    let style = window.getComputedStyle (inputText, null).getPropertyValue("font-size");
-    console.log (style);
-    let fontSize = parseFloat (style);
-    console.log (fontSize)
-    inputText.style.fontSize = (fontSize+1) + "px"
+h1Btn.addEventListener ("click", () => {
+    output.innerHTML = `<h1>${textInput.value}</h1>`;
 })
 
-decreaseFontSize.addEventListener ("click", () => {
-    let style = window.getComputedStyle (inputText, "").getPropertyValue ("font-size");
-    let fontSize = parseFloat (style);
-    inputText.style.fontSize = (fontSize - 1) + "px"
+h2Btn.addEventListener ("click", () => {
+    output.innerHTML = `<h2>${textInput.value}</h2>`;
+})
+
+h3Btn.addEventListener ("click", () => {
+    output.innerHTML = `<h3>${textInput.value}</h3>`
 })
