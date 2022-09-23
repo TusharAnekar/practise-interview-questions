@@ -1,11 +1,15 @@
-const hideText= document.querySelector ("#hide-text");
-const hideBtn = document.querySelector ("#hide-btn");
-const unHideBtn = document.querySelector ("#unhide-btn");
+const passwordText = document.querySelector ("#password-text")
+const setPwdBtn = document.querySelector ("#set-pwd-btn")
+const error = document.querySelector ("#error")
 
-hideBtn.addEventListener ("click", () => {
-    hideText.style.display = "none"
-})
-
-unHideBtn.addEventListener ("click", () => {
-    hideText.style.display = "block"
+setPwdBtn.addEventListener ("click", () => {
+    console.log(passwordText.value.length);
+    if (passwordText.value.length< 10) {
+        error.textContent = "Please enter more than 10 characters."
+        passwordText.style.background = "red"
+    }
+    else {
+        error.textContent = ""
+        setPwdBtn.disabled = true;
+    }
 })
